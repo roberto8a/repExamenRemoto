@@ -6,17 +6,17 @@ public class ProductCatalog {
   private Hashtable productSpecifications = new Hashtable();
 
   public ProductCatalog() {
-    ProductSpecification ps = new ProductSpecification(1, 100, "product 1");
-    productSpecifications.put(new Integer(1), ps);
-    ps = new ProductSpecification(2, 200, "product 2");
-    productSpecifications.put(new Integer(2), ps);
-
-    ps = new ProductSpecification(3, 300, "product 3");
-    productSpecifications.put(new Integer(3), ps);
-    ps = new ProductSpecification(4, 400, "product 4");
-    productSpecifications.put(new Integer(4), ps);
-
+    ProductSpecification ps;
+	newProduct(1);
+	newProduct(2);
+	newProduct(3);
+	newProduct(4);
   }
+
+private void newProduct(int x) {
+	ProductSpecification ps = new ProductSpecification(x, x*100, "product "+x);
+    productSpecifications.put(new Integer(x), ps);
+}
 
   public ProductSpecification specification(int unidadesPorCompra) {
     return (ProductSpecification) productSpecifications.get(new Integer(unidadesPorCompra));
