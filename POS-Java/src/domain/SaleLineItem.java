@@ -4,9 +4,9 @@ class SaleLineItem {
   private int	quantity;
   private	ProductSpecification	productSpec;
 
-   public SaleLineItem(ProductSpecification spec, int quantity )
+   public SaleLineItem(ProductSpecification specification, int quantity )
 	{
-		this.productSpec = spec;
+		this.productSpec = specification;
 		this.quantity = quantity;
 	}
 
