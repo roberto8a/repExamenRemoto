@@ -19,7 +19,7 @@ public class POST {
 
 	public void EnterItem( int upc, int quantity )
 	{
-		if( isNewSale() )
+		if( ( sale == null ) || ( sale.isComplete() ) )
 		{
 			sale = new Sale();
 		}
@@ -32,12 +32,7 @@ public class POST {
 		sale.makePayment( cashTendered );
 	}
 
-	private boolean isNewSale()
-	{
-		return ( sale == null ) || ( sale.isComplete() );
-	}
-
-        public float getTotal()
+	public float getTotal()
         {
           return sale.total();
         }
